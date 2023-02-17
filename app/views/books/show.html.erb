@@ -1,0 +1,10 @@
+<body>
+
+  <main>
+       <h2>Book detail</h2>
+    <table class ="table">
+        <%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    </table>
+  </main>
+
+</body>
