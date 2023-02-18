@@ -7,4 +7,10 @@
     </table>
   </main>
 
+  <div>
+    <% if @post_image.user == current_user %>
+      <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+    <% end %>
+  </div>
+
 </body>
