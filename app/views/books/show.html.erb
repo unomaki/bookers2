@@ -6,10 +6,10 @@
         <%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
     </table>
   </main>
-
+  
   <div>
-    <% if @post_image.user == current_user %>
-      <%= link_to "削除", post_image_path(@post_image), method: :delete %>
+    <% if @book.user == current_user %>
+    <%= link_to "削除", book_path(@book.id), method: :delete %>
     <% end %>
   </div>
 
