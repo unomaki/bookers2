@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-　def index
-　end
-　
-　
+  def index
+    @users = User.all
+  end
+
+
   def show
     @user = User.find(params[:id])
-    @post_images = @user.post_images
   end
 
   def edit
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 
 
-    private
+  private
 
   def user_params
     params.require(:user).permit(:name, :profile_image)

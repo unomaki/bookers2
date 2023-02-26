@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2>Books</h2>
+
+<main>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+      <tr>
+        <td><%= image_tag @user.get_profile_image(100,100) %></td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>

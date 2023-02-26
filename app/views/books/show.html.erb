@@ -3,10 +3,20 @@
   <main>
        <h2>Book detail</h2>
     <table class ="table">
-        <%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <tbody>
+        <tr>
+
+          <td>「イメージ画像を表示する記述」</td>
+          <td><%= @book.title %></td>
+          <td><%= @book.body %></td>
+          <td><%= link_to "Edit", edit_book_path(@book.id), method: :edit %></td>
+          <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+
+        </tr>
+      </tbody>
     </table>
   </main>
-  
+
   <div>
     <% if @book.user == current_user %>
     <%= link_to "削除", book_path(@book.id), method: :delete %>
