@@ -1,19 +1,23 @@
-<h2>Books</h2>
+<body>
 
-<main>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Opinion</th>
-      </tr>
-      <tr>
-        <td><%= image_tag @user.get_profile_image(100,100) %></td>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>Books</h2>
 
-</main>
+  <main>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+        <tr>
+          <td><%= image_tag @user.get_profile_image(100,100) %></td>
+          <td><%= @book.title %></td>
+          <td><%= @book.body %></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+
+</body>
