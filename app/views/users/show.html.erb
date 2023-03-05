@@ -1,5 +1,4 @@
 <body>
-
   <h2>Books</h2>
 
   <main>
@@ -10,11 +9,13 @@
           <th>Title</th>
           <th>Opinion</th>
         </tr>
+        <% @book.each do |book| %>
         <tr>
           <td><%= image_tag @user.get_profile_image(100,100) %></td>
-          <td><%= @book.title %></td>
-          <td><%= @book.body %></td>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
 
