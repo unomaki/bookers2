@@ -1,18 +1,4 @@
-  <h2>User info</h2>
-
-    <%= image_tag 'no_image', size: "200x200" %>
-    <table class="table">
-      <tbody>
-        <tr>
-          <th>name</th>
-          <th><%= @user.name  %></th>
-        </tr>
-        <tr>
-          <th>introducution</th>
-          <th><%= @user.introduction %></th>
-        </tr>
-      </tbody>
-    </table>
+<%= render 'users/list' %> 
 
     <h1>New book</h1>
       <%= form_with model: Book.new do |f| %>
