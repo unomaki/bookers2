@@ -34,22 +34,54 @@
                 <% end %>
               <% end %>
               </li>
+
+              <% if user_signed_in? %>
+              <li>
+                <%= link_to users_path(current_user.id) do %>
+                <i class="fas fa-users"></i>
+                Users
+                <% end %>
+                <% else %>
+                <a class="nav-link text-light" href="/home/about">
+                <%= link_to homes_about_path do %>
+                <i class="fas fa-link"></i>
+                About
+                <% end %>
+              <% end %>
+              </a>
+              </li>
+
+              <% if user_signed_in? %>
+              <li>
+                <%= link_to books_path(current_user.id) do %>
+                <i class="fas fa-book-open"></i>
+                Books
+                <% end %>
+                <% else %>
+                <%= link_to new_user_registration_path do %>
+                <i class="fas fa-user-plus"></i>
+                Sign up
+                <% end %>
+              <% end %>
+              </li>
+
+              <% if user_signed_in? %>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i>
+                Log out
+                <% end %>
+                <% else %>
+                <%= link_to user_session_path do %>
+                <i class="fas fa-sign-in-alt"></i>
+                Log in
+                <% end %>
+              <% end %>
+              </li>
+
             </ul>
           </div></div>
       </nav>
-
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
   </header>
 
   <main>
