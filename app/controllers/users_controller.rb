@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @book = @user.books.all
-    flash[:notice] = "You have updated user successfully."
   end
 
   def edit
